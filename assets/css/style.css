@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url(assets/css/Poppins-Black.ttf);
+} 
+
+
+.background {
+    background-color: white;
+    /*background-image: url("../assets/css/img/"<?= $game->image ?>" "alt="") */
+}
+
+
+.card {
+    width: 50%;
+    margin : 10px auto;
+   
+    
+}
+
+.image img {
+    width: 75%;
+    object-position: center;
+   
+}
+.card-body {
+    text-align: center;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+.card-title {
+    text-align: center;
+}
+.card-date {
+    text-align: center;
+}
+.card-studio {
+    text-align: center;
+}
+.card-genre {
+    text-align: center;
+}
