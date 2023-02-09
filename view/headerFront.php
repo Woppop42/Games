@@ -20,6 +20,9 @@ if(isset($_POST["logout"]))
         <li class="nav-item">
           <a class="nav-link active" href="../view/createUser.php">S'inscrire</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="../view/profile.php">Profil</a>
+        </li>
         <?php if(!isset($_SESSION["pseudo"])){
         echo "<li class='nav-item'>
           <a class='nav-link active' href='../view/connexion.php'>Connexion</a>

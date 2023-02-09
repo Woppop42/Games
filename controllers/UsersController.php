@@ -1,5 +1,6 @@
 <?php
 require_once("../models/Users.php");
+require_once("../models/Rates.php");
 
 class UsersController {
 
@@ -63,7 +64,7 @@ class UsersController {
                 {
                     $_SESSION["pseudo"] = $account->pseudo;
                     $_SESSION["role"] = $account->role;
-                    $_SESSION["status"];
+                    $_SESSION["status"] = $account->status;
                     $_SESSION["id_user"] = $account->user_id;
                     if($account->role == 0)
                         {
@@ -92,5 +93,19 @@ class UsersController {
             
             session_destroy();
             
+        }
+    public function displayRates(int $user_id)
+        {
+            global $pdo;
+            $sql ="SELECT Rates.rate, Rates.id, Rates.user_id
+                    FROM Rates JOIN Games ON Rates.id = Games.id
+                    WHERE :user_id = Rates.user_id";
+            $statement = $pdo->prepare($sql);
+            $statement->bindParam(":user_id", $user_id);
+            $statement->execute();
+            $rates = $statement->fetchAll(PDO::FETCH_CLASS, "Rates");
+
+            return $rates;
+
         }
 }

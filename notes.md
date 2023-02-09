@@ -1,4 +1,4 @@
-Créer un espace de vote.
+Créer un espace de vote. XXXXXXXXXXXXXXXX
 Afficher la moyenne dans la page gamelist
 Permettre à un utilisateur de voir ses votes
 Modifier sa note (1 seule fois)

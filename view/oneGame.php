@@ -8,8 +8,9 @@ $game = $controller->readOne($id);
 $rateController = new RatesController;
 if(isset($_POST["submit"])){
 $rate = $rateController->vote($_POST["note"], $id, $_SESSION["id_user"]);
-$_SESSION["status"] = $status;
-$rateController->voteStatus($status); }
+$_SESSION["status"] == false;
+$statusController = new RatesController;
+$status = $statusController->voteStatus($_SESSION["status"]); }
 echo "<pre>";
 var_dump($_SESSION);
 echo "</pre>";

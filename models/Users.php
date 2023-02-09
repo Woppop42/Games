@@ -7,7 +7,10 @@ class Users {
     public string $password;
     public string $speudo;
     public string $role;
+    public  ?bool $status;
 
-    public function __construct(){}
+    public function __construct(){
+        
+    }
     
 }

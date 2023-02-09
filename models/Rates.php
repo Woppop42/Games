@@ -6,6 +6,7 @@ class Rates {
     public float $rate;
     public int $id;
     public int $s_id;
+    public int $user_id;
 
     public function __construct(){}
 }
