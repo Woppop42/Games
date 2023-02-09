@@ -6,7 +6,7 @@ class GamesController
     public function readAll()
     {
         global $pdo;
-        $sql = "SELECT id, name, genre, date_sortie, image, rate FROM Games";
+        $sql = "SELECT id, name, genre, date_sortie, image FROM Games";
         $statement = $pdo->prepare($sql);
         $statement->execute();
         $list = $statement->fetchAll(PDO::FETCH_CLASS, "Games");

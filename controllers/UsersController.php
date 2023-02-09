@@ -50,31 +50,38 @@ class UsersController {
         global $pdo;
         $sql = "SELECT * FROM User WHERE :pseudo = pseudo";
         $statement = $pdo->prepare($sql);
-        $statement->bindParam(":user", $pseudo);
+        $statement->bindParam(":pseudo", $pseudo);
         $statement->execute();
 
         // Vérification de la présence du compte : 
         if($statement->rowCount() > 0)
             {
                 $statement->setFetchMode(PDO::FETCH_CLASS, "Users");
-                $account->$statement->fetch();
+                $account = $statement->fetch();
                 // Vérification du mot de passe : 
                 if(password_verify($password, $account->password))
                 {
                     $_SESSION["pseudo"] = $account->pseudo;
-                    header("Location: /Jeux/view/gameList.php");
+                    $_SESSION["role"] = $account->role;
+                    if($account->role == 0)
+                        {
+                            header("Location: /Jeux/admin/admin.php");
+                        } else{
+                            header("Location: /Jeux/view/gameList.php");
+                                }
+                    
+                    
                 } else {
                     return [
                         "succes" => false,
                         "message" => "Mot de passe incorrect !"
                     ];
                 }
-            else{
+            }else{
                 return [
                     "success" => false,
                     "message" => "Cet utilisateur n'existe pas !" 
-                ]
-            }
+                ];
             }
 
     }

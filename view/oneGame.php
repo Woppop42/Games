@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("../controllers/GamesController.php");
 $id = $_GET["id"];
 $controller = new GamesController;

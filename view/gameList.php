@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("../controllers/GamesController.php");
 $controller = new GamesController;
 $list = $controller->readAll();
@@ -7,6 +8,7 @@ $list = $controller->readAll();
 define("PAGE_TITLE", "Liste des jeux");
 include("headFront.php");
 include("headerFront.php");
+var_dump($_SESSION);
 ?>
 <div class="background">
 <main>
