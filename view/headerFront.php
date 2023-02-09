@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="gameList.php">Les jeux</a>
+          <a class="nav-link active" aria-current="page" href="../view/gameList.php">Les jeux</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="createUser.php">S'inscrire</a>
+          <a class="nav-link active" href="../view/createUser.php">S'inscrire</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="connexion.php">Connexion</a>
+          <a class="nav-link active" href="../connexion.php">Connexion</a>
         </li>
       </ul>
     </div>
