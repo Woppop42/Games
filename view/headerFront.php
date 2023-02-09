@@ -1,3 +1,11 @@
+<?php
+require_once("../controllers/UsersController.php");
+if(isset($_POST["logout"]))
+  {
+    $controller = new UsersController;
+    $controller->logOut();
+  }
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-danger">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -12,9 +20,17 @@
         <li class="nav-item">
           <a class="nav-link active" href="../view/createUser.php">S'inscrire</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="../connexion.php">Connexion</a>
-        </li>
+        <?php if(!isset($_SESSION["pseudo"])){
+        echo "<li class='nav-item'>
+          <a class='nav-link active' href='../view/connexion.php'>Connexion</a>
+        </li>"; } ?>
+        <?php if(isset($_SESSION["pseudo"])){
+        echo "<li class='nav-item'>
+          <form method='post' type='submit'>
+          <button  class='btn btn-warning' name='logout'>Déconnexion</a>
+          </form>
+        </li>";} ?>
+        
       </ul>
     </div>
   </div>

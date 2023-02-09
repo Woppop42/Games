@@ -63,6 +63,8 @@ class UsersController {
                 {
                     $_SESSION["pseudo"] = $account->pseudo;
                     $_SESSION["role"] = $account->role;
+                    $_SESSION["status"];
+                    $_SESSION["id_user"] = $account->user_id;
                     if($account->role == 0)
                         {
                             header("Location: /Jeux/admin/admin.php");
@@ -85,4 +87,10 @@ class UsersController {
             }
 
     }
+    public function logOut()
+        {
+            
+            session_destroy();
+            
+        }
 }
